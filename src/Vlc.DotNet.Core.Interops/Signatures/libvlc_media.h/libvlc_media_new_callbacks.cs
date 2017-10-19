@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -53,7 +54,7 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// <returns>Return the newly created media or <see cref="IntPtr.Zero"/> on error.</returns>
     [LibVlcFunction("libvlc_media_new_callbacks")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate IntPtr CreateNewMediaFromCallbacks(IntPtr mediaPlayerInstance,
+    internal delegate VlcMediaHandle CreateNewMediaFromCallbacks(VlcInstanceHandle instance,
         CallbackOpenMediaDelegate open_cb,
         CallbackReadMediaDelegate read_cb,
         CallbackSeekMediaDelegate seek_cb,

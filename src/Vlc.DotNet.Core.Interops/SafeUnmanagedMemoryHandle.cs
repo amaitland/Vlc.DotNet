@@ -13,7 +13,7 @@
 #if !NETSTANDARD1_3
     [SecurityPermission(SecurityAction.Demand, UnmanagedCode = true)]
 #endif
-    internal sealed class SafeUnmanagedMemoryHandle : SafeHandle
+    public sealed class SafeUnmanagedMemoryHandle : SafeHandle
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SafeUnmanagedMemoryHandle"/> class by providing the handle to be stored.

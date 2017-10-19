@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -8,5 +9,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// </summary>
     [LibVlcFunction("libvlc_video_get_marquee_int")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate int GetVideoMarqueeInteger(IntPtr mediaPlayerInstance, VideoMarqueeOptions option);
+    internal delegate int GetVideoMarqueeInteger(VlcMediaPlayerHandle mediaPlayerInstance, VideoMarqueeOptions option);
 }

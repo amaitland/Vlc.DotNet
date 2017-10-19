@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Runtime.InteropServices;
-using System.Text;
+using Vlc.DotNet.Core.Interops.Handles;
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core.Interops
 {
-    public sealed partial class VlcManager
+	public sealed partial class VlcManager
     {
-        public void AddOptionToMedia(VlcMediaInstance mediaInstance, string option)
+        public void AddOptionToMedia(VlcMediaHandle mediaInstance, string option)
         {
-            if (mediaInstance == IntPtr.Zero)
+            if (mediaInstance.IsInvalid)
                 throw new ArgumentException("Media instance is not initialized.");
             if (string.IsNullOrEmpty(option))
                 return;
@@ -20,9 +19,9 @@ namespace Vlc.DotNet.Core.Interops
             }
         }
 
-        public void AddOptionToMedia(VlcMediaInstance mediaInstance, string[] options)
+        public void AddOptionToMedia(VlcMediaHandle mediaInstance, string[] options)
         {
-            if (mediaInstance == IntPtr.Zero)
+            if (mediaInstance.IsInvalid)
                 throw new ArgumentException("Media instance is not initialized.");
             options = options ?? new string[0];
             foreach (var option in options)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -8,5 +9,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// </summary>
     [LibVlcFunction("libvlc_video_get_adjust_int")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate int GetVideoAdjustInteger(IntPtr mediaPlayerInstance, VideoAdjustOptions option);
+    internal delegate int GetVideoAdjustInteger(VlcMediaPlayerHandle mediaPlayerInstance, VideoAdjustOptions option);
 }

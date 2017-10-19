@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -8,5 +9,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// </summary>
     [LibVlcFunction("libvlc_video_set_logo_int")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate void SetVideoLogoInteger(IntPtr mediaPlayerInstance, VideoLogoOptions option, int value);
+    internal delegate void SetVideoLogoInteger(VlcMediaPlayerHandle mediaPlayerInstance, VideoLogoOptions option, int value);
 }

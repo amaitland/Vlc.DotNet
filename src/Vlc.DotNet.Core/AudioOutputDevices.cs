@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Vlc.DotNet.Core.Interops;
+using Vlc.DotNet.Core.Interops.Handles;
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core
@@ -8,7 +9,7 @@ namespace Vlc.DotNet.Core
     public sealed class AudioOutputDevices : IEnumerable<AudioOutputDevice>
     {
         private VlcManager myManager;
-        private VlcMediaPlayerInstance myMediaPlayerInstance;
+        private VlcMediaPlayerHandle myMediaPlayerInstance;
         private AudioOutputDescription myAudioOutputDescription;
 
         public int Count
@@ -19,7 +20,7 @@ namespace Vlc.DotNet.Core
             }
         }
 
-        internal AudioOutputDevices(AudioOutputDescription audioOutputDescription, VlcManager manager, VlcMediaPlayerInstance mediaPlayerInstance)
+        internal AudioOutputDevices(AudioOutputDescription audioOutputDescription, VlcManager manager, VlcMediaPlayerHandle mediaPlayerInstance)
         {
             myAudioOutputDescription = audioOutputDescription;
             myManager = manager;

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Vlc.DotNet.Core.Interops;
+using Vlc.DotNet.Core.Interops.Handles;
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core
@@ -7,9 +8,9 @@ namespace Vlc.DotNet.Core
     public sealed class VideoTracksManagement : ITracksManagement
     {
         private readonly VlcManager myManager;
-        private readonly VlcMediaPlayerInstance myMediaPlayer;
+        private readonly VlcMediaPlayerHandle myMediaPlayer;
 
-        internal VideoTracksManagement(VlcManager manager, VlcMediaPlayerInstance mediaPlayerInstance)
+        internal VideoTracksManagement(VlcManager manager, VlcMediaPlayerHandle mediaPlayerInstance)
         {
             myManager = manager;
             myMediaPlayer = mediaPlayerInstance;

@@ -1,14 +1,14 @@
 ﻿using Vlc.DotNet.Core.Interops;
-using Vlc.DotNet.Core.Interops.Signatures;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core
 {
-    internal class LogoManagement : ILogoManagement
+	internal class LogoManagement : ILogoManagement
     {
         private readonly VlcManager myManager;
-        private readonly VlcMediaPlayerInstance myMediaPlayer;
+        private readonly VlcMediaPlayerHandle myMediaPlayer;
 
-        public LogoManagement(VlcManager manager, VlcMediaPlayerInstance mediaPlayerInstance)
+        public LogoManagement(VlcManager manager, VlcMediaPlayerHandle mediaPlayerInstance)
         {
             myManager = manager;
             myMediaPlayer = mediaPlayerInstance;

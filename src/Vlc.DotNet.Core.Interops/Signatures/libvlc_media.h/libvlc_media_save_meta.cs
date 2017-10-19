@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -8,5 +9,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// </summary>
     [LibVlcFunction("libvlc_media_save_meta")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate int SaveMediaMetadatas(IntPtr mediaInstance);
+    internal delegate int SaveMediaMetadatas(VlcMediaHandle mediaInstance);
 }

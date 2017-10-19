@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core.Interops
 {
     public sealed partial class VlcManager
     {
-        public MediaTrackInfosStructure[] GetMediaTracksInformations(VlcMediaInstance mediaInstance)
+        public MediaTrackInfosStructure[] GetMediaTracksInformations(VlcMediaHandle mediaInstance)
         {
-            if (mediaInstance == IntPtr.Zero)
+            if (mediaInstance.IsInvalid)
                 throw new ArgumentException("Media instance is not initialized.");
             IntPtr fullBuffer;
             var cpt = GetInteropDelegate<GetMediaTracksInformations>().Invoke(mediaInstance, out fullBuffer);

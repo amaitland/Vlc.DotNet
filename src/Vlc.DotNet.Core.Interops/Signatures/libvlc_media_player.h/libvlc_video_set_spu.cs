@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -8,5 +9,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// </summary>
     [LibVlcFunction("libvlc_video_set_spu")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate void SetVideoSpu(IntPtr mediaPlayerInstance, int spu);
+    internal delegate void SetVideoSpu(VlcMediaPlayerHandle mediaPlayerInstance, int spu);
 }

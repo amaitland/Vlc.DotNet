@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -8,5 +9,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// </summary>
     [LibVlcFunction("libvlc_media_player_set_hwnd")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate void SetMediaPlayerVideoHostHandle(IntPtr mediaPlayerInstance, IntPtr videoHostHandle);
+    internal delegate void SetMediaPlayerVideoHostHandle(VlcMediaPlayerHandle mediaPlayerInstance, IntPtr videoHostHandle);
 }

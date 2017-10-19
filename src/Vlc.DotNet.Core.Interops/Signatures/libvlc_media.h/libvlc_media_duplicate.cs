@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -9,5 +10,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// <returns>Return a media descriptor object.</returns>
     [LibVlcFunction("libvlc_media_duplicate")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate IntPtr CloneMedia(IntPtr mediaInstance);
+    internal delegate VlcMediaHandle CloneMedia(VlcMediaHandle mediaInstance);
 }

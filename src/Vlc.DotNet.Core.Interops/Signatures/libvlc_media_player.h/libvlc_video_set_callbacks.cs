@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -25,5 +26,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// </param>
     [LibVlcFunction("libvlc_video_set_callbacks")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate void SetVideoCallbacks(IntPtr mp, LockVideoCallback lockCallback, UnlockVideoCallback unlockCallback, DisplayVideoCallback displayCallback, IntPtr userData);
+    internal delegate void SetVideoCallbacks(VlcMediaPlayerHandle mp, LockVideoCallback lockCallback, UnlockVideoCallback unlockCallback, DisplayVideoCallback displayCallback, IntPtr userData);
 }

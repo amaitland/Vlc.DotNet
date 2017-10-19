@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -9,5 +10,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// <returns>Get the requested movie play rate.</returns>
     [LibVlcFunction("libvlc_media_player_get_time")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate long GetTime(IntPtr mediaPlayerInstance);
+    internal delegate long GetTime(VlcMediaPlayerHandle mediaPlayerInstance);
 }

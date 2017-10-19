@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -9,5 +10,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// <returns>Return the newly created media or NULL on error.</returns>
     [LibVlcFunction("libvlc_media_new_path")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate IntPtr CreateNewMediaFromPath(IntPtr instance, IntPtr mrl);
+    internal delegate VlcMediaHandle CreateNewMediaFromPath(VlcInstanceHandle instance, SafeUnmanagedMemoryHandle mrl);
 }

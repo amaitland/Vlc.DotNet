@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -7,6 +8,6 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// Stop.
     /// </summary>
     [LibVlcFunction("libvlc_media_player_stop")]
-    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate void Stop(IntPtr mediaPlayerInstance);
+    [UnmanagedFunctionPointer(callingConvention: CallingConvention.Cdecl)]
+    internal delegate void Stop(VlcMediaPlayerHandle mediaPlayerInstance);
 }

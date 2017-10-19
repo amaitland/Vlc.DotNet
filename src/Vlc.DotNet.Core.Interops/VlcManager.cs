@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Vlc.DotNet.Core.Interops.Handles;
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core.Interops
 {
     public sealed partial class VlcManager : VlcInteropsManager
     {
-        private VlcInstance myVlcInstance;
         private static readonly Dictionary<DirectoryInfo, VlcManager> MyAllInstance = new Dictionary<DirectoryInfo, VlcManager>();
+        private VlcInstanceHandle myVlcInstance;
 
         public string VlcVersion => Utf8InteropStringConverter.Utf8InteropToString(GetInteropDelegate<GetVersion>().Invoke());
 

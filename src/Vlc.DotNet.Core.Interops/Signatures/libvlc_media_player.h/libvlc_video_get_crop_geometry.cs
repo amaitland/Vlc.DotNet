@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -8,5 +9,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// </summary>
     [LibVlcFunction("libvlc_video_get_crop_geometry")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate IntPtr GetVideoCropGeometry(IntPtr mediaPlayerInstance);
+    internal delegate IntPtr GetVideoCropGeometry(VlcMediaPlayerHandle mediaPlayerInstance);
 }

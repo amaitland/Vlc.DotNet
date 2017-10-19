@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -9,5 +10,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// <returns>Return a new media player object, or NULL on error.</returns>
     [LibVlcFunction("libvlc_media_player_set_media")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate void SetMediaToMediaPlayer(IntPtr mediaPlayerInstance, IntPtr mediaInstance);
+    internal delegate void SetMediaToMediaPlayer(VlcMediaPlayerHandle mediaPlayerInstance, VlcMediaHandle mediaInstance);
 }

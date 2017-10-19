@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -8,5 +9,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// </summary>
     [LibVlcFunction("libvlc_video_get_track_count")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate int GetVideoTracksCount(IntPtr mediaPlayerInstance);
+    internal delegate int GetVideoTracksCount(VlcMediaPlayerHandle mediaPlayerInstance);
 }

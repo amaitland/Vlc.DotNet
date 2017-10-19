@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -8,5 +9,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// </summary>
     [LibVlcFunction("libvlc_audio_output_device_longname")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate IntPtr GetAudioOutputDeviceLongName(IntPtr instance, IntPtr audioOutputName, int deviceIndex);
+    internal delegate IntPtr GetAudioOutputDeviceLongName(VlcInstanceHandle instance, IntPtr audioOutputName, int deviceIndex);
 }

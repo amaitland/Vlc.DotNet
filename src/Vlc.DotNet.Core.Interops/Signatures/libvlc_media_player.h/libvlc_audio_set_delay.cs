@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -8,5 +9,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// </summary>
     [LibVlcFunction("libvlc_audio_set_delay")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate void SetAudioDelay(IntPtr mediaPlayerInstance, long channel);
+    internal delegate void SetAudioDelay(VlcMediaPlayerHandle mediaPlayerInstance, long channel);
 }

@@ -1,13 +1,14 @@
 ﻿using System;
+using Vlc.DotNet.Core.Interops.Handles;
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core.Interops
 {
     public sealed partial class VlcManager
     {
-        public long GetVideoSpuDelay(VlcMediaPlayerInstance mediaPlayerInstance)
+        public long GetVideoSpuDelay(VlcMediaPlayerHandle mediaPlayerInstance)
         {
-            if (mediaPlayerInstance == IntPtr.Zero)
+            if (mediaPlayerInstance.IsInvalid)
                 throw new ArgumentException("Media player instance is not initialized.");
             return GetInteropDelegate<GetVideoSpuDelay>().Invoke(mediaPlayerInstance);
         }

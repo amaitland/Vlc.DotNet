@@ -38,7 +38,7 @@
         /// </summary>
         /// <param name="source">The source string to be converted to UTF-8 so that it can be passed to libvlc.</param>
         /// <returns>The safe handle</returns>
-        public static SafeHandle ToUtf8Interop(string source)
+        public static SafeUnmanagedMemoryHandle ToUtf8Interop(string source)
         {
             if (source == null)
             {

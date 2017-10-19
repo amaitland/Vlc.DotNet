@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -8,5 +9,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// </summary>
     [LibVlcFunction("libvlc_media_get_duration")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate long GetMediaDuration(IntPtr mediaInstance);
+    internal delegate long GetMediaDuration(VlcMediaHandle mediaInstance);
 }

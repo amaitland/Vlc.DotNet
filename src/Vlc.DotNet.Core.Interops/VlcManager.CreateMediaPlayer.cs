@@ -1,15 +1,19 @@
-﻿using System;
+﻿using Vlc.DotNet.Core.Interops.Handles;
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core.Interops
 {
-    public sealed partial class VlcManager
-    {
-        public VlcMediaPlayerInstance CreateMediaPlayer()
-        {
-            EnsureVlcInstance();
+	public sealed partial class VlcManager
+	{
+		public VlcMediaPlayerHandle CreateMediaPlayer()
+		{
+			EnsureVlcInstance();
 
-            return new VlcMediaPlayerInstance(this, GetInteropDelegate<CreateMediaPlayer>().Invoke(myVlcInstance));
-        }
-    }
+			var mediaPlayerHandle = GetInteropDelegate<CreateMediaPlayer>().Invoke(myVlcInstance);
+
+			mediaPlayerHandle.ReleaseDelegate = GetInteropDelegate<ReleaseMediaPlayer>();
+
+			return mediaPlayerHandle;
+		}
+	}
 }

@@ -119,7 +119,7 @@ namespace Vlc.DotNet.Core
 
         private string GetMetaData(MediaMetadatas metadata)
         {
-            if (MediaInstance == IntPtr.Zero)
+            if (MediaInstance.IsInvalid)
                 return null;
             if (myVlcMediaPlayer.Manager.IsParsedMedia(MediaInstance))
                 myVlcMediaPlayer.Manager.ParseMedia(MediaInstance);

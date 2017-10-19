@@ -1,70 +1,71 @@
 ﻿using System;
+using Vlc.DotNet.Core.Interops.Handles;
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core.Interops
 {
     public sealed partial class VlcManager
     {
-        public void SetVideoMarqueeEnabled(VlcMediaPlayerInstance mediaPlayerInstance, bool value)
+        public void SetVideoMarqueeEnabled(VlcMediaPlayerHandle mediaPlayerInstance, bool value)
         {
-            if (mediaPlayerInstance == IntPtr.Zero)
+            if (mediaPlayerInstance.IsInvalid)
                 throw new ArgumentException("Media player instance is not initialized.");
             GetInteropDelegate<SetVideoMarqueeInteger>().Invoke(mediaPlayerInstance, VideoMarqueeOptions.Enable, value ? 1 : 0);
         }
-        public void SetVideoMarqueeText(VlcMediaPlayerInstance mediaPlayerInstance, string value)
+        public void SetVideoMarqueeText(VlcMediaPlayerHandle mediaPlayerInstance, string value)
         {
-            if (mediaPlayerInstance == IntPtr.Zero)
+            if (mediaPlayerInstance.IsInvalid)
                 throw new ArgumentException("Media player instance is not initialized.");
             using (var valueInterop = Utf8InteropStringConverter.ToUtf8Interop(value))
             {
                 GetInteropDelegate<SetVideoMarqueeString>().Invoke(mediaPlayerInstance, VideoMarqueeOptions.Text, valueInterop.DangerousGetHandle());
             }
         }
-        public void SetVideoMarqueeColor(VlcMediaPlayerInstance mediaPlayerInstance, int value)
+        public void SetVideoMarqueeColor(VlcMediaPlayerHandle mediaPlayerInstance, int value)
         {
-            if (mediaPlayerInstance == IntPtr.Zero)
+            if (mediaPlayerInstance.IsInvalid)
                 throw new ArgumentException("Media player instance is not initialized.");
             GetInteropDelegate<SetVideoMarqueeInteger>().Invoke(mediaPlayerInstance, VideoMarqueeOptions.Color, value);
         }
-        public void SetVideoMarqueeOpacity(VlcMediaPlayerInstance mediaPlayerInstance, int value)
+        public void SetVideoMarqueeOpacity(VlcMediaPlayerHandle mediaPlayerInstance, int value)
         {
-            if (mediaPlayerInstance == IntPtr.Zero)
+            if (mediaPlayerInstance.IsInvalid)
                 throw new ArgumentException("Media player instance is not initialized.");
             GetInteropDelegate<SetVideoMarqueeInteger>().Invoke(mediaPlayerInstance, VideoMarqueeOptions.Opacity, value);
         }
-        public void SetVideoMarqueePosition(VlcMediaPlayerInstance mediaPlayerInstance, int value)
+        public void SetVideoMarqueePosition(VlcMediaPlayerHandle mediaPlayerInstance, int value)
         {
-            if (mediaPlayerInstance == IntPtr.Zero)
+            if (mediaPlayerInstance.IsInvalid)
                 throw new ArgumentException("Media player instance is not initialized.");
             GetInteropDelegate<SetVideoMarqueeInteger>().Invoke(mediaPlayerInstance, VideoMarqueeOptions.Position, value);
         }
-        public void SetVideoMarqueeRefresh(VlcMediaPlayerInstance mediaPlayerInstance, int value)
+        public void SetVideoMarqueeRefresh(VlcMediaPlayerHandle mediaPlayerInstance, int value)
         {
-            if (mediaPlayerInstance == IntPtr.Zero)
+            if (mediaPlayerInstance.IsInvalid)
                 throw new ArgumentException("Media player instance is not initialized.");
             GetInteropDelegate<SetVideoMarqueeInteger>().Invoke(mediaPlayerInstance, VideoMarqueeOptions.Refresh, value);
         }
-        public void SetVideoMarqueeSize(VlcMediaPlayerInstance mediaPlayerInstance, int value)
+        public void SetVideoMarqueeSize(VlcMediaPlayerHandle mediaPlayerInstance, int value)
         {
-            if (mediaPlayerInstance == IntPtr.Zero)
+            if (mediaPlayerInstance.IsInvalid)
                 throw new ArgumentException("Media player instance is not initialized.");
             GetInteropDelegate<SetVideoMarqueeInteger>().Invoke(mediaPlayerInstance, VideoMarqueeOptions.Size, value);
         }
-        public void SetVideoMarqueeTimeout(VlcMediaPlayerInstance mediaPlayerInstance, int value)
+        public void SetVideoMarqueeTimeout(VlcMediaPlayerHandle mediaPlayerInstance, int value)
         {
-            if (mediaPlayerInstance == IntPtr.Zero)
+            if (mediaPlayerInstance.IsInvalid)
                 throw new ArgumentException("Media player instance is not initialized.");
             GetInteropDelegate<SetVideoMarqueeInteger>().Invoke(mediaPlayerInstance, VideoMarqueeOptions.Timeout, value);
         }
-        public void SetVideoMarqueeX(VlcMediaPlayerInstance mediaPlayerInstance, int value)
+        public void SetVideoMarqueeX(VlcMediaPlayerHandle mediaPlayerInstance, int value)
         {
-            if (mediaPlayerInstance == IntPtr.Zero)
+            if (mediaPlayerInstance.IsInvalid)
                 throw new ArgumentException("Media player instance is not initialized.");
             GetInteropDelegate<SetVideoMarqueeInteger>().Invoke(mediaPlayerInstance, VideoMarqueeOptions.X, value);
         }
-        public void SetVideoMarqueeY(VlcMediaPlayerInstance mediaPlayerInstance, int value)
+        public void SetVideoMarqueeY(VlcMediaPlayerHandle mediaPlayerInstance, int value)
         {
-            if (mediaPlayerInstance == IntPtr.Zero)
+            if (mediaPlayerInstance.IsInvalid)
                 throw new ArgumentException("Media player instance is not initialized.");
             GetInteropDelegate<SetVideoMarqueeInteger>().Invoke(mediaPlayerInstance, VideoMarqueeOptions.Y, value);
         }

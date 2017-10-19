@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -8,5 +9,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// </summary>
     [LibVlcFunction("libvlc_media_player_is_playing")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate int IsPlaying(IntPtr mediaPlayerInstance);
+    internal delegate int IsPlaying(VlcMediaPlayerHandle mediaPlayerInstance);
 }

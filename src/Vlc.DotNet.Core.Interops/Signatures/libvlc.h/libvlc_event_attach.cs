@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -13,5 +14,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// <returns>Return 0 on success, ENOMEM on error.</returns>
     [LibVlcFunction("libvlc_event_attach")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate int AttachEvent(IntPtr eventManagerInstance, EventTypes eventType, EventCallback callback, IntPtr userData);
+    public delegate int AttachEvent(VlcEventManagerHandle eventManagerInstance, EventTypes eventType, EventCallback callback, IntPtr userData);
 }

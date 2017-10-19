@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Handles;
 
 namespace Vlc.DotNet.Core.Interops.Signatures
 {
@@ -31,5 +32,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// </returns>
     [LibVlcFunction("libvlc_media_new_fd")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate IntPtr CreateNewMediaFromFileDescriptor(IntPtr instance, int fd);
+    internal delegate VlcMediaHandle CreateNewMediaFromFileDescriptor(VlcInstanceHandle instance, int fd);
 }

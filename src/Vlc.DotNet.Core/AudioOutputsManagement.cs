@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Vlc.DotNet.Core.Interops;
+using Vlc.DotNet.Core.Interops.Handles;
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core
@@ -8,9 +9,9 @@ namespace Vlc.DotNet.Core
     internal class AudioOutputsManagement : IAudioOutputsManagement
     {
         private readonly VlcManager myManager;
-        private readonly VlcMediaPlayerInstance myMediaPlayerInstance;
+        private readonly VlcMediaPlayerHandle myMediaPlayerInstance;
 
-        internal AudioOutputsManagement(VlcManager manager, VlcMediaPlayerInstance mediaPlayerInstance)
+        internal AudioOutputsManagement(VlcManager manager, VlcMediaPlayerHandle mediaPlayerInstance)
         {
             myManager = manager;
             myMediaPlayerInstance = mediaPlayerInstance;

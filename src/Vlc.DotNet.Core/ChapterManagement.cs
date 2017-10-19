@@ -1,4 +1,5 @@
 ﻿using Vlc.DotNet.Core.Interops;
+using Vlc.DotNet.Core.Interops.Handles;
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core
@@ -6,9 +7,9 @@ namespace Vlc.DotNet.Core
     internal sealed class ChapterManagement : IChapterManagement
     {
         private readonly VlcManager myManager;
-        private readonly VlcMediaPlayerInstance myMediaPlayer;
+        private readonly VlcMediaPlayerHandle myMediaPlayer;
 
-        public ChapterManagement(VlcManager manager, VlcMediaPlayerInstance mediaPlayerInstance)
+        public ChapterManagement(VlcManager manager, VlcMediaPlayerHandle mediaPlayerInstance)
         {
             myManager = manager;
             myMediaPlayer = mediaPlayerInstance;
